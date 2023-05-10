@@ -3,7 +3,7 @@ name: Prettier and Build Check
 on: workflow_call
 
 jobs:
-  build:
+  prettify:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
