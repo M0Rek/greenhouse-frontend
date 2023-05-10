@@ -6,11 +6,12 @@ export default function Navbar() {
 
   const handleToggle = () => {
     setOpen(!open);
+    
   };
 
   return (
     <nav>
-      <div className="w-auto bg-blue-300 h-16 flex justify-between  flex-wrap items-center shadow-md">
+      <div className="w-auto bg-blue-400 h-16 flex justify-between  flex-wrap items-center shadow-md">
         <div className="md:hidden flex items-center ml-5">
           <BurgerMenuButton open={open} onToggle={handleToggle} />
         </div>
