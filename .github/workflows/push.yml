@@ -1,0 +1,12 @@
+name: Test pushed commits
+on:
+  push:
+    branches:
+      - "*"
+      - "!main"
+jobs:
+  do-nothing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do nothing
+        run: echo "Nothing to do."

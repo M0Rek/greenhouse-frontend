@@ -1,0 +1,11 @@
+name: Build and Deploy Main
+on:
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  prettify_and_build:
+    name: Prettify code and check if buildable
+    uses: ./.github/workflows/prettify_build.yml
+    
