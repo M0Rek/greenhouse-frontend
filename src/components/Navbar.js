@@ -6,7 +6,6 @@ export default function Navbar() {
 
   const handleToggle = () => {
     setOpen(!open);
-    
   };
 
   return (
