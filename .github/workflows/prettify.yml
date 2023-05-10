@@ -3,11 +3,14 @@ name: Prettier and Build Check
 on: workflow_call
 
 jobs:
-  build:
+  prettify:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          # Make sure the actual branch is checked out when running on pull requests
+          ref: ${{ github.head_ref }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -21,8 +24,5 @@ jobs:
       - name: Run Prettier
         uses: creyD/prettier_action@v4.3
         with:
-          dry: true
-          prettier_options: --check "src/**/*.{js,jsx,ts,tsx}"
-
-      - name: Build React application
-        run: npm run build
+          prettier_options: --write src/**/*.{js,jsx,ts,tsx}
+          commit_message: Prettify code

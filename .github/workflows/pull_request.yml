@@ -2,10 +2,13 @@ name: Build and Deploy Main
 on:
   pull_request:
     branches:
-    - main
+      - main
 
 jobs:
-  prettify_and_build:
-    name: Prettify code and check if buildable
-    uses: ./.github/workflows/prettify_build.yml
-    
+  prettify:
+    name: Prettify code
+    uses: ./.github/workflows/prettify.yml
+  build:
+    needs: prettify
+    name: Check if can be built
+    uses: ./.github/workflows/build.yml
