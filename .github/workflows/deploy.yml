@@ -16,7 +16,7 @@ jobs:
           cache: npm
 
       - name: Update .env variable
-        run: sed -i s/REACT_APP_API_BASE_URL=.*/REACT_APP_API_BASE_URL=http:\/\/34.88.232.46:80/ .env
+        run: sed -i s|REACT_APP_API_BASE_URL=.*|REACT_APP_API_BASE_URL=http://34.88.232.46:80| .env
 
       - name: Install dependencies
         run: npm ci
